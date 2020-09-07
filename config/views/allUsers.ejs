@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+   
+    <!-- Title Page-->
+    <title>Penny Union</title>
+
+    <!-- Fontfaces CSS-->
+    <link href="../../../assets/userAdmin/css/font-face.css" rel="stylesheet" media="all" />
+    <link
+      href="../../../assets/userAdmin/vendor/font-awesome-4.7/css/font-awesome.min.css"
+      rel="stylesheet"
+      media="all"
+    />
+    <link
+      href="../../../assets/userAdmin/vendor/font-awesome-5/css/fontawesome-all.min.css"
+      rel="stylesheet"
+      media="all"
+    />
+    <link
+      href="../../../assets/userAdmin/vendor/mdi-font/css/material-design-iconic-font.min.css"
+      rel="stylesheet"
+      media="all"
+    />
+
+    <!-- Bootstrap CSS-->
+    <link
+      href="../../../assets/userAdmin/vendor/bootstrap-4.1/bootstrap.min.css"
+      rel="stylesheet"
+      media="all"
+    />
+
+    <!-- Vendor CSS-->
+    <link
+      href="../../../assets/userAdmin/vendor/animsition/animsition.min.css"
+      rel="stylesheet"
+      media="all"
+    />
+    <link
+      href="../a../ssets/userAdmin/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css"
+      rel="stylesheet"
+      media="all"
+    />
+    <link href="../../../assets/userAdmin/vendor/wow/animate.css" rel="stylesheet" media="all" />
+    <link
+      href="../../../assets/userAdmin/vendor/css-hamburgers/hamburgers.min.css"
+      rel="stylesheet"
+      media="all"
+    />
+    <link href="../../../assets/userAdmin/vendor/slick/slick.css" rel="stylesheet" media="all" />
+    <link href="../../../assets/userAdmin/vendor/select2/select2.min.css" rel="stylesheet" media="all" />
+    <link
+      href="../../../assets/userAdmin/vendor/perfect-scrollbar/perfect-scrollbar.css"
+      rel="stylesheet"
+      media="all"
+    />
+    <link
+      href="../../../assets/userAdmin/vendor/vector-map/jqvmap.min.css"
+      rel="stylesheet"
+      media="all"
+    />
+
+    <!-- Main CSS-->
+    <link href="../../../assets/userAdmin/css/theme.css" rel="stylesheet" media="all" />
+    <style>
+      .header-desktop2 {
+        background: #393771;
+      }
+      .menu-sidebar2 .logo {
+        background: #393771;
+      }
+      .statistic {
+        padding-top: 57px;
+        margin-top: 3%;
+      }
+
+      .upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.btn {
+  border: 2px solid gray;
+  color: gray;
+  background-color: white;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
+.btn {
+    border: 2px solid gray;
+    color: gray;
+    background-color: white;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0 auto;
+    justify-content: center;
+    display: flex;
+    margin: 5%;
+}
+.page-wrapper {
+    overflow: hidden;
+    background: #f2f2f2;
+    padding-bottom: 40vh;
+}
+@media (max-width: 991px){
+.page-wrapper {
+    overflow: auto;
+    background: #f2f2f2;
+    padding-bottom: 12vh;
+}
+}
+
+.page-wrapper {
+    overflow: hidden;
+    background: #ffffff;
+    padding-bottom: 40vh;
+}
+    </style>
+  </head>
+
+  <body class="animsition">
+    <div class="page-wrapper">
+      <!-- MENU SIDEBAR-->
+      <aside class="menu-sidebar2">
+        <div class="logo">
+          <a href="#">
+            <img src="../../../assets/invest.png" style='width:50%' alt="logo" />
+          </a>
+        </div>
+
+        <nav>
+         <button   style='    background: #393771;
+                    color: white;
+                    padding: 5%;
+                    margin: 30% 10% 10%;
+                    width: 80%;
+                    border-radius: 5px;
+                        cursor:pointer
+                '>
+                                <a style='    color: white;
+                    font-size: 1.3rem;' href='/users/withdrawAdmin/?id=<%='5f1eb360d888e65269eb195a'%>'>Withdraw</a>
+                </button>
+               <button   style='    background: #393771;
+                    color: white;
+                    padding: 5%;
+                    margin: 30% 10% 10%;
+                    width: 80%;
+                    border-radius: 5px;
+                        cursor:pointer
+                '>
+                    <a style='    color: white;
+                    font-size: 1.3rem;' href='/users/0000/admin/all_users'>All Users</a>
+                </button>
+                <button   style='    background: #393771;
+                    color: white;
+                    padding: 5%;
+                    margin: 30% 10% 10%;
+                    width: 80%;
+                    border-radius: 5px;
+                        cursor:pointer
+                '>
+                    <a style='    color: white;
+                    font-size: 1.3rem;' href='/users/0000/admin/blocked_users'>Blocked Users</a>
+                </button>
+
+                <button   style='    background: #393771;
+                    color: white;
+                    padding: 5%;
+                    margin: 30% 10% 10%;
+                    width: 80%;
+                    border-radius: 5px;
+                        cursor:pointer
+                '>
+                    <a style='    color: white;
+                    font-size: 1.3rem;' href='/users/0000/admin'>Status</a>
+                </button>
+        </nav>
+
+        
+        
+
+
+      </aside>
+      <!-- END MENU SIDEBAR-->
+
+      
+
+      <!-- PAGE CONTAINER-->
+      <div class="page-container2">
+        <!-- HEADER DESKTOP-->
+        <header class="header-desktop2">
+          <div class="section__content section__content--p30">
+            <div class="container-fluid">
+              <div class="header-wrap2">
+                <div class="logo d-block d-lg-none">
+                  <a href="#">
+                    <img src="../../../assets/invest.png" style='width:50%' alt="logo" />
+                  </a>
+                </div>
+                <div class="header-button2">
+                  <div class="header-button-item mr-0 js-sidebar-btn">
+                                      <i class="zmdi zmdi-menu"></i>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+        <aside class="menu-sidebar2 js-right-sidebar d-block d-lg-none">
+          <div class="logo">
+            <a href="#">
+              <img src="../../../assets/invest.png" alt="Cool Admin" />
+            </a>
+          </div>
+
+          <button   style='    background: #393771;
+                    color: white;
+                    padding: 5%;
+                    margin: 30% 10% 10%;
+                    width: 80%;
+                    border-radius: 5px;
+                        cursor:pointer
+                '>
+                                <a style='    color: white;
+                    font-size: 1.3rem;' href='/users/withdrawAdmin/?id=<%='5f1dc8bf83c1311d94f1fd28'%>'>Withdraw</a>
+                </button>
+
+                <button   style='    background: #393771;
+                    color: white;
+                    padding: 5%;
+                    margin: 30% 10% 10%;
+                    width: 80%;
+                    border-radius: 5px;
+                        cursor:pointer
+                '>
+                    <a style='    color: white;
+                    font-size: 1.3rem;' href='/users/0000/admin/all_users'>All Users</a>
+                </button>
+                <button   style='    background: #393771;
+                    color: white;
+                    padding: 5%;
+                    margin: 30% 10% 10%;
+                    width: 80%;
+                    border-radius: 5px;
+                        cursor:pointer
+                '>
+                    <a style='    color: white;
+                    font-size: 1.3rem;' href='/users/0000/admin/blocked_users'>Blocked Users</a>
+                </button>
+
+                <button   style='    background: #393771;
+                    color: white;
+                    padding: 5%;
+                    margin: 30% 10% 10%;
+                    width: 80%;
+                    border-radius: 5px;
+                        cursor:pointer
+                '>
+                    <a style='    color: white;
+                    font-size: 1.3rem;' href='/users/0000/admin'>Status</a>
+                </button>
+         
+        </aside>
+
+        <!-- STATISTIC-->
+        <section class="statistic">
+          <div class="section__content section__content--p30">
+            <div class="container-fluid">
+              <div class="row">
+                
+                <div class="col-md-6 col-lg-3">
+
+               <% if (user) { %>
+
+                   <% user.map((user) =>{ %>
+                          <div class="statistic__item">
+                    <h4 class="desc">Name : <%= user.name %></h4>     
+                    <h4 class="desc">Phone : <%= user.phone %></h4>
+                    <h4 class="desc">Donations : <%= user.invested %></h4>
+                    <h4 class="desc">Reffered : <%= user.invite %></h4>
+
+                    
+                    <button style='    background: #393771;
+                    color: white;
+                    padding: 5%;
+                    margin: 15% 5% 5%;
+                    width: 90%;
+                    border-radius: 5px;
+                    cursor:pointer;
+                    font-size:1rem
+                    '>  
+                    <%= user.status ? 'registered' : 'not registered' %>
+                    </button>
+
+                    <form action="/users/block/?id=<%=user.id%>" method="POST">
+                     <button type='submit' style='background: red;
+                    color: white;
+                    padding: 5%;
+                    margin: 15% 5% 5%;
+                    width: 90%;
+                    border-radius: 5px;
+                    cursor:pointer;
+                    font-size:1rem
+                    '>  
+                    <%= 'block user' %>
+                    </button>
+                    </form>
+
+                    
+
+                   
+
+                    <div class="icon">
+                    </div>
+                  </div>
+
+
+                    <% }) %>
+
+               <% } %>
+                
+
+
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </section>
+
+       
+    </div>
+
+    <!-- Jquery JS-->
+    <script src="../../../assets/userAdmin/vendor/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap JS-->
+    <script src="../../../assets/userAdmin/vendor/bootstrap-4.1/popper.min.js"></script>
+    <script src="../../../assets/userAdmin/vendor/bootstrap-4.1/bootstrap.min.js"></script>
+    <!-- Vendor JS       -->
+    <script src="../../../assets/userAdmin/vendor/slick/slick.min.js"></script>
+    <script src="../../../assets/userAdmin/vendor/wow/wow.min.js"></script>
+    <script src="../../../assets/userAdmin/vendor/animsition/animsition.min.js"></script>
+    <script src="../../../assets/userAdmin/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+    <script src="../../../assets/userAdmin/vendor/counter-up/jquery.waypoints.min.js"></script>
+    <script src="../../../assets/userAdmin/vendor/counter-up/jquery.counterup.min.js"></script>
+    <script src="../../../assets/userAdmin/vendor/circle-progress/circle-progress.min.js"></script>
+    <script src="../../../assets/userAdmin/vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="../../../assets/userAdmin/vendor/chartjs/Chart.bundle.min.js"></script>
+    <script src="../../../assets/userAdmin/vendor/select2/select2.min.js"></script>
+    <script src="../../../assets/userAdmin/vendor/vector-map/jquery.vmap.js"></script>
+    <script src="../../../assets/userAdmin/vendor/vector-map/jquery.vmap.min.js"></script>
+    <script src="../../../assets/userAdmin/vendor/vector-map/jquery.vmap.sampledata.js"></script>
+    <script src="../../../assets/userAdmin/vendor/vector-map/jquery.vmap.world.js"></script>
+
+    <!-- Main JS-->
+    <script src="../../../assets/userAdmin/js/main.js"></script>
+  </body>
+</html>
+<!-- end document-->

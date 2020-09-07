@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+    	<link rel="stylesheet" type="text/css" href="../assets/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../assets/Login_v18/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../assets/Login_v18/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../assets/Login_v18/vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="../assets/Login_v18/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../assets/Login_v18/vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../assets/Login_v18/vendor/select2/select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="../assets/Login_v18/vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../assets/Login_v18/css/util.css">
+	<link rel="stylesheet" type="text/css" href="../assets/Login_v18/css/main.css">
+
+  <style>
+  .wrap-login100 {
+    width: 100%;
+    background: #fff;
+    overflow: hidden;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    flex-direction: row;
+}
+  </style>
+</head>
+<body style="background-color: #666666;">
+	
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+      <form action="/users/register" method="POST" class="login100-form validate-form">
+					<span class="login100-form-title p-b-43">
+						Register to continue
+					</span>
+
+                <% include ./partials/messages %>
+
+					
+					
+					<div class="wrap-input100 validate-input">
+						<input class="input100" type="text" name="name">
+						<span class="focus-input100"></span>
+						<span class="label-input100">Name</span>
+					</div>
+
+          	<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+						<input class="input100" type="text" name="email">
+						<span class="focus-input100"></span>
+						<span class="label-input100">Email</span>
+					</div>
+					
+
+          	<div class="wrap-input100 validate-input" >
+						<input class="input100" type="text" name="phone">
+						<span class="focus-input100"></span>
+						<span class="label-input100">Phone Number</span>
+					</div>
+					
+					
+					
+					<div class="wrap-input100 validate-input" data-validate="Password is required">
+						<input class="input100" type="password" name="password">
+						<span class="focus-input100"></span>
+						<span class="label-input100">Password</span>
+					</div>
+          
+          				<div class="wrap-input100 validate-input" data-validate="Password is required">
+						<input class="input100" type="password" name="password2">
+						<span class="focus-input100"></span>
+						<span class="label-input100">Comfirm Password</span>
+					</div>
+
+				
+			                      <li><a href="/users/terms">Terms and Conditions</a></li>
+
+
+					<div class="container-login100-form-btn">
+						<button  type="submit" class="login100-form-btn">
+							Join Us
+						</button>
+					</div>
+					
+					<div class="text-center p-t-46 p-b-20">
+						<span class="txt2">
+        Have Account? <a href="/users/login">Login</a>
+						</span>
+					</div>
+
+					
+				</form>
+
+				<div class="login100-more" style="background-image: url('https://cdn.pixabay.com/photo/2017/09/07/08/54/money-2724241__340.jpg');">
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+
+	
+	
+<!--===============================================================================================-->
+	<script src="../assets/Login_v18/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../assets/Login_v18/vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../assets/Login_v18/vendor/bootstrap/js/popper.js"></script>
+	<script src="../assets/Login_v18/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../assets/Login_v18/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../assets/Login_v18/vendor/daterangepicker/moment.min.js"></script>
+	<script src="../assets/Login_v18/vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="../assets/Login_v18/vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="../assets/Login_v18/js/main.js"></script>
+
+</body>
+</html>
