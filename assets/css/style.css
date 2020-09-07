@@ -1832,3 +1832,9 @@ ol {
     color: rgba(128, 128, 128, 0.6);
     word-break: break-word;
 }
+
+.statistic {
+    padding-top: 57px;
+    margin-top: 3%;
+    background: linear-gradient(to right, #3e2bce 0%, #2dd3aa 100%, #2dd3aa 100%, #2dd3aa 100%) !important
+}
