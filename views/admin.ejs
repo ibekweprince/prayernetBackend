@@ -9,7 +9,7 @@
     />
    
     <!-- Title Page-->
-    <title>Penny Union</title>
+    <title>OctaFX</title>
 
     <!-- Fontfaces CSS-->
     <link href="../../../assets/userAdmin/css/font-face.css" rel="stylesheet" media="all" />
@@ -43,7 +43,7 @@
       media="all"
     />
     <link
-      href="../a../ssets/userAdmin/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css"
+      href="../../../assets/userAdmin/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css"
       rel="stylesheet"
       media="all"
     />
@@ -129,7 +129,44 @@
     padding-bottom: 12vh;
 }
 }
+.header-desktop2 {
+    background: #f2f2f2;
+        height: 153px;
 
+    border-bottom: 1px solid gainsboro;
+}
+.section__content--p30 {
+    padding: 105px 30px;
+}
+
+.menu-sidebar2 .logo {
+    background: #f2f2f2;
+        height: 151px;
+
+}
+
+.header-button-item {
+    font-size: 30px;
+    color: #5193e2;
+    margin-right: 34px;
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.statistic {
+    padding-top: 57px;
+    margin-top: 3%;
+    background: #ffffff;
+}
 .page-wrapper {
     overflow: hidden;
     background: #ffffff;
@@ -143,67 +180,43 @@
       <!-- MENU SIDEBAR-->
       <aside class="menu-sidebar2">
         <div class="logo">
-          <a href="#">
-            <img src="../../../assets/invest.png" style='width:50%' alt="logo" />
+          <a href="/">
+            <img src="../../../assets/img/octalogo.png" style='width:35%' alt="logo" />
           </a>
         </div>
+        <div class="menu-sidebar2__content js-scrollbar1">
+          <div class="account2">
+            <div class="image img-cir img-120">
+              <img src="https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png" alt="John Doe" />
+            </div>
+            <h4 class="name"> Welcome User</h4>
+          </div>
+          <nav class="navbar-sidebar2">
+            
 
-        <nav>
-         <button   style='    background: #393771;
+           <button style='    background: #393771;
                     color: white;
                     padding: 5%;
-                    margin: 30% 10% 10%;
-                    width: 80%;
+                    margin: 1% 5% 10%;
+                    width: 90%;
                     border-radius: 5px;
-                        cursor:pointer
-                '>
+                    cursor:pointer
+                    '>
                                 <a style='    color: white;
-                    font-size: 1.3rem;' href='/users/withdrawAdmin/?id=<%='5f202b5c210d9600170eb371 '%>'>Pairing</a>
-                </button>
-                <button   style='    background: #393771;
-                    color: white;
-                    padding: 5%;
-                    margin: 30% 10% 10%;
-                    width: 80%;
-                    border-radius: 5px;
-                        cursor:pointer
-                '>
-                    <a style='    color: white;
                     font-size: 1.3rem;' href='/users/0000/admin/all_users'>All Users</a>
-                </button>
-                <button   style='    background: #393771;
-                    color: white;
-                    padding: 5%;
-                    margin: 30% 10% 10%;
-                    width: 80%;
-                    border-radius: 5px;
-                        cursor:pointer
-                '>
-                    <a style='    color: white;
-                    font-size: 1.3rem;' href='/users/0000/admin/blocked_users'>Blocked User</a>
-                </button>
-
-                <button   style='    background: #393771;
-                    color: white;
-                    padding: 5%;
-                    margin: 30% 10% 10%;
-                    width: 80%;
-                    border-radius: 5px;
-                        cursor:pointer
-                '>
-                    <a style='    color: white;
-                    font-size: 1.3rem;' href='/users/0000/admin'>Status</a>
-                </button>
-        </nav>
+            </button>
 
         
-        
 
 
+          
+
+
+<a href="/users/logout" class="btn btn-secondary">Logout</a>
+          </nav>
+        </div>
       </aside>
       <!-- END MENU SIDEBAR-->
-
-      
 
       <!-- PAGE CONTAINER-->
       <div class="page-container2">
@@ -213,14 +226,13 @@
             <div class="container-fluid">
               <div class="header-wrap2">
                 <div class="logo d-block d-lg-none">
-                  <a href="#">
-                    <img src="../../../assets/invest.png" style='width:50%' alt="logo" />
+                  <a href="/">
+            <img src="../../../assets/img/octalogo.png" style='width:35%' alt="logo" />
                   </a>
                 </div>
                 <div class="header-button2">
                   <div class="header-button-item mr-0 js-sidebar-btn">
-                                      <i class="zmdi zmdi-menu"></i>
-
+                    <i class="zmdi zmdi-menu"></i>
                   </div>
                 </div>
               </div>
@@ -229,59 +241,47 @@
         </header>
         <aside class="menu-sidebar2 js-right-sidebar d-block d-lg-none">
           <div class="logo">
-            <a href="#">
+            <a href="/">
               <img src="../../../assets/invest.png" alt="Cool Admin" />
             </a>
           </div>
+          <div class="menu-sidebar2__content js-scrollbar2">
+            <div class="account2">
+              <div class="image img-cir img-120">
+                <img src="https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png" alt="John Doe" />
+              </div>
+              <h4 class="name">Welcome User</h4>
+            </div>
+            <nav class="navbar-sidebar2">
 
-          <button   style='    background: #393771;
+            <button style='    background: #393771;
                     color: white;
                     padding: 5%;
-                    margin: 30% 10% 10%;
-                    width: 80%;
+                    margin: 1% 5% 10%;
+                    width: 90%;
                     border-radius: 5px;
-                        cursor:pointer
-                '>
+                    cursor:pointer
+                    '>
                                 <a style='    color: white;
-                    font-size: 1.3rem;' href='/users/withdrawAdmin/?id=<%='5f44ca87b9eb420017dc5b24'%>'>Pairing</a>
-                </button>
+                    font-size: 1.3rem;' href='users/0000/admin/all_users'>All Users</a>
+            </button>
 
-                 <button   style='    background: #393771;
-                    color: white;
-                    padding: 5%;
-                    margin: 30% 10% 10%;
-                    width: 80%;
-                    border-radius: 5px;
-                        cursor:pointer
-                '>
-                    <a style='    color: white;
-                    font-size: 1.3rem;' href='/users/0000/admin/all_users'>All Users</a>
-                </button>
-                <button   style='    background: #393771;
-                    color: white;
-                    padding: 5%;
-                    margin: 30% 10% 10%;
-                    width: 80%;
-                    border-radius: 5px;
-                        cursor:pointer
-                '>
-                    <a style='    color: white;
-                    font-size: 1.3rem;' href='/users/0000/admin/blocked_users'>Blocked User</a>
-                </button>
 
-                <button   style='  background: #393771;
-                    color: white;
-                    padding: 5%;
-                    margin: 30% 10% 10%;
-                    width: 80%;
-                    border-radius: 5px;
-                        cursor:pointer
-                '>
-                    <a style='    color: white;
-                    font-size: 1.3rem;' href='/users/0000/admin'>Status</a>
-                </button>
-         
+
+
+
+            
+
+
+
+
+           
+<a href="/users/logout" class="btn btn-secondary">Logout</a>
+                      
+             </nav>
+          </div>
         </aside>
+        <!-- END HEADER DESKTOP-->
 
         <!-- STATISTIC-->
         <section class="statistic">
@@ -290,35 +290,54 @@
               <div class="row">
                 
                 <div class="col-md-6 col-lg-3">
+                  <div class="statistic__item">
+                    <h2 class="number"><%= user.length %></h2>
 
-               <% if (users) { %>
+                    <span class="desc">Total Users</span>
+                    <div class="icon">
+                      <i class="zmdi zmdi-money"></i>
+                    </div>
+                  </div>
 
-                   <% users.map((user) =>{ %>
-                          <div class="statistic__item">
-                    <span class="desc">Account Name : <%= user.name %></span>
-                    <% if(user.registerProof){ %>
-                    <% user.registerProof.map((obj) =>{ %>
+              
+
+                </div>
+
+                <h4 style='    margin: 5% 5% 10%;
+                font-size: 1.9rem;'> Update Users</h4>
+
+                <div class="col-md-6 col-lg-3">
 
 
-                         <img src='<%=obj.img%>' alt=''   />
+                <% if (user) { %>
 
+                   <% user.map((user) =>{ %>
+                                             <div class="statistic__item">
 
-                    <% }) %>
-                    <%}%>
+                   <form action="/users/0000/admin/update/?id=<%=user._id%>" id='form' method="POST">
+                    <h4 class="desc">Email : <%= user.email %></h4>     
+                    <h4 class="desc">Invested : <input style='    border: 1px solid gainsboro;
+    padding: 4px;
+    width: 45%;' value='' name='invested'  placeholder='<%= user.invested%>' /> </h4>
+                    <h4 class="desc">Total Earning : <input style='    border: 1px solid gainsboro;
+    padding: 4px;
+    width: 90%;' value='' name='withdraw'  placeholder='<%= user.withdraw%>' /> </h4>
 
+                    <h4 class="desc">Reffered : <%= user.reffered %></h4>
 
-                    <button style='    background: #393771;
+             <button style='    background: #393771;
                     color: white;
                     padding: 5%;
                     margin: 15% 5% 5%;
                     width: 90%;
                     border-radius: 5px;
-                    cursor:pointer
-                    '>
-                                <a style='    color: white;
-                    font-size: 1.3rem;' href='/users/paid/?id=<%=user._id%>'>Paid</a>
-                </button>
+                    cursor:pointer;
+                    font-size:1rem
+                    '>  
+                    update 
+                    </button>
 
+                    </form>
                     <div class="icon">
                     </div>
                   </div>
@@ -327,19 +346,22 @@
                     <% }) %>
 
                <% } %>
+              
                 
-
-
-
                 </div>
 
               </div>
             </div>
           </div>
         </section>
+        <!-- END STATISTIC-->
+     
+
 
        
     </div>
+
+    
 
     <!-- Jquery JS-->
     <script src="../../../assets/userAdmin/vendor/jquery-3.2.1.min.js"></script>
@@ -364,6 +386,28 @@
 
     <!-- Main JS-->
     <script src="../../../assets/userAdmin/js/main.js"></script>
+
+    <script>
+
+         $(".change").change(function () {
+         $(".product_image_label").html("Image uploaded successfully")
+          productImageUpload()
+        });
+
+        function productImageUpload() {
+        var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("F").files[0]);
+
+        oFReader.onload = function (oFREvent) {
+          document.getElementById("HF").value = oFREvent.target.result;
+
+          // $('#imageP').attr('src', oFREvent.target.result)
+          // i = $('#imageP').attr('src')
+
+        };
+      }
+
+    </script>
   </body>
 </html>
 <!-- end document-->

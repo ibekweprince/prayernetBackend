@@ -308,12 +308,53 @@ router.get('/paid', (req, res) => {
 
 router.get('/0000/admin', (req, res) => {
 
-  User.find({ status: false }).then(user => {
-    res.render('admin', {
-      users: user
-    })
+  User.find({}, function (err, user) {
+    res.render('admin', { user: user });
+  });
 
-  })
+
+});
+
+router.post('/0000/admin/update', (req, res) => {
+
+
+  const { invested, withdraw, } = req.body;
+  let id = req.query.id
+
+  console.log(id)
+
+  if (invested.length > 1) {
+    User.updateOne({ _id: id }, { invested: invested }, function (err, payto) {
+      if (err) {
+        console.log(err)
+      } else {
+        console.log(payto)
+      }
+    })
+  }
+
+  if (withdraw.length > 1) {
+    User.updateOne({ _id: id }, { withdraw: withdraw }, function (err, payto) {
+      if (err) {
+        console.log(err)
+
+      } else {
+        console.log(payto)
+      }
+    })
+  }
+
+
+
+
+
+
+  res.redirect('/users/0000/admin')
+
+
+
+
+
 });
 
 router.get('/0000/admin/blocked_users', (req, res) => {
@@ -353,7 +394,7 @@ router.post('/donate', (req, res) => {
   if (!amount) {
     errors.push({ msg: 'Select an amount' });
   }
- 
+
   User.findOne({ _id: userId }).then(user => {
     if (user.status == false) {
 
@@ -655,10 +696,10 @@ router.post('/withdraw', (req, res) => {
 
 // Register
 router.post('/register', (req, res) => {
-  const { name, email, password, password2, phone } = req.body;
+  const { email, password, password2, } = req.body;
   let errors = [];
 
-  if (!name || !email || !password || !password2 || !phone) {
+  if (!email || !password || !password2) {
     errors.push({ msg: 'Please enter all fields' });
   }
 
@@ -673,7 +714,6 @@ router.post('/register', (req, res) => {
   if (errors.length > 0) {
     res.render('register', {
       errors,
-      name,
       email,
       password,
       password2
@@ -684,45 +724,23 @@ router.post('/register', (req, res) => {
         errors.push({ msg: 'Email already exists' });
         res.render('register', {
           errors,
-          name,
           email,
           password,
           password2,
-          phone
         });
       } else {
-        let status = false;
-        let invite = 0
+
         let invested = 0
-        let withdraw = (invested / 100) * 30
-        let investNumber = 0
-        let payto = []
-        let blocked = false
-        let paring = false
-        let paired = []
-        let btn = true
-        let proof = []
-        let registerProof = []
-        let blockProof = []
+        let reffered = 0
+        let withdraw = 0
+
 
         const newUser = new User({
-          name,
           email,
           password,
-          phone,
-          status,
-          invite,
           invested,
-          investNumber,
-          payto,
-          blocked,
           withdraw,
-          paring,
-          paired,
-          btn,
-          proof,
-          registerProof,
-          blockProof
+          reffered
         });
 
         bcrypt.genSalt(10, (err, salt) => {

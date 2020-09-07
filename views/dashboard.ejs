@@ -9,7 +9,7 @@
     />
    
     <!-- Title Page-->
-    <title>Penny Union</title>
+    <title>OctaFX</title>
 
     <!-- Fontfaces CSS-->
     <link href="../assets/userAdmin/css/font-face.css" rel="stylesheet" media="all" />
@@ -129,6 +129,49 @@
     padding-bottom: 12vh;
 }
 }
+.header-desktop2 {
+    background: #f2f2f2;
+        height: 153px;
+
+    border-bottom: 1px solid gainsboro;
+}
+.section__content--p30 {
+    padding: 105px 30px;
+}
+
+.menu-sidebar2 .logo {
+    background: #f2f2f2;
+        height: 151px;
+
+}
+
+.header-button-item {
+    font-size: 30px;
+    color: #5193e2;
+    margin-right: 34px;
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.statistic {
+    padding-top: 57px;
+    margin-top: 3%;
+    background: #ffffff;
+}
+.page-wrapper {
+    overflow: hidden;
+    background: #ffffff;
+    padding-bottom: 40vh;
+}
     </style>
   </head>
 
@@ -138,7 +181,7 @@
       <aside class="menu-sidebar2">
         <div class="logo">
           <a href="/">
-            <img src="../assets/invest.png" style='width:50%' alt="logo" />
+            <img src="../assets/img/octalogo.png" style='width:35%' alt="logo" />
           </a>
         </div>
         <div class="menu-sidebar2__content js-scrollbar1">
@@ -146,57 +189,25 @@
             <div class="image img-cir img-120">
               <img src="https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png" alt="John Doe" />
             </div>
-            <h4 class="name"> Welcome <%= user.name %></h4>
+            <h4 class="name"> Welcome User</h4>
           </div>
           <nav class="navbar-sidebar2">
             
 
-             <% if (user.status === false) { %>
-
-                <button style='    background: red;
-                    color: white;
-                    padding: 4%;
-                    margin: 5% 5% 5%;
-                    width: 90%;
-                    border-radius: 5px;
-                    cursor:pointer'>
-                    <a style='    color: white;
-                    font-size: 1.3rem;' href='/users/pay'>Register Now</a>
-                </button> 
-
-          <%  } else{ %>
-
-          <button style='    background: green;
-                    color: white;
-                    padding: 4%;
-                    margin: 5% 5% 5%;
-                    width: 90%;
-                    border-radius: 5px;
-                    cursor:pointer'>
-                    <a style='    color: white;
-                    font-size: 1.3rem;' href=''>Approved!</a>
-                </button> 
-
-          <%} %>
-
           
 
-          <div class='account2'>
-                    <h4 class='name' style='text-align:center'> Number of Investment Made</h4>
-                    <h4><%= user.investNumber %></h4>
-
-          </div>
+        
 
 
            <div class='account2'>
                     <h4 class='name' style='text-align:center'> Number of Persons Referred</h4>
-                    <h4><%= user.invite %></h4>
+                    <h4><%= user.reffered %></h4>
 
                     <p class='name'>referal link: </p>
 
                    <p style='    font-size: 12px;
     word-break: break-all;
-    font-weight: 700;'> http://codabae.herokuapp.com/users/i/?id=<%=user._id%></p>
+    font-weight: 700;'> http://www.octafx.com/users/i/?id=<%=user._id%></p>
                    <br>
 
 
@@ -219,7 +230,7 @@
               <div class="header-wrap2">
                 <div class="logo d-block d-lg-none">
                   <a href="/">
-            <img src="../assets/invest.png" style='width:50%' alt="logo" />
+            <img src="../assets/img/octalogo.png" style='width:35%' alt="logo" />
                   </a>
                 </div>
                 <div class="header-button2">
@@ -242,48 +253,18 @@
               <div class="image img-cir img-120">
                 <img src="https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png" alt="John Doe" />
               </div>
-              <h4 class="name">Welcome <%= user.name %></h4>
+              <h4 class="name">Welcome User</h4>
             </div>
             <nav class="navbar-sidebar2">
 
-             <% if (user.status === false) { %>
+            
 
-                <button style='    background: red;
-                    color: white;
-                    padding: 4%;
-                    margin: 5% 5% 5%;
-                    width: 90%;
-                    border-radius: 5px;
-                    cursor:pointer'>
-                    <a style='    color: white;
-                    font-size: 1.3rem;' href='/users/pay'>Register Now</a>
-                </button> 
 
-          <%  } else{ %>
-
-          <button style='    background: green;
-                    color: white;
-                    padding: 4%;
-                    margin: 5% 5% 5%;
-                    width: 90%;
-                    border-radius: 5px;
-                    cursor:pointer'>
-                    <a style='    color: white;
-                    font-size: 1.3rem;' href=''>Approved!</a>
-                </button> 
-
-          <%} %>
-
-<div class='account2'>
-                    <h4 class='name' style='text-align:center'> Number of Investment Made</h4>
-                    <h4><%= user.investNumber %></h4>
-
-          </div>
 
 
            <div class='account2'>
                     <h4 class='name' style='text-align:center'> Number of Persons Referred</h4>
-                    <h4><%= user.invite %></h4>
+                    <h4><%= user.reffered %></h4>
 
                     <p class='name'>referal link: </p>
 
@@ -312,7 +293,7 @@
                 <div class="col-md-6 col-lg-3">
                   <div class="statistic__item">
                     <h2 class="number"><%= user.invested %></h2>
-                    <span class="desc">Donated</span>
+                    <span class="desc">Invested</span>
                     <div class="icon">
                       <i class="zmdi zmdi-money"></i>
                     </div>
@@ -327,7 +308,7 @@
                     cursor:pointer
                     '>
                                 <a style='    color: white;
-                    font-size: 1.3rem;' href='/users/donate/?id=<%=user._id%>'>Donate Now</a>
+                    font-size: 1.3rem;' href='/users/Invest/?id=<%=user._id%>'>Invest Now</a>
                 </button>
 
                 </div>
@@ -339,24 +320,22 @@
                     <div class="icon">
                       <i class="zmdi zmdi-money"></i>
                     </div>
+
+                    
                   </div>
 
-                
-                    <% if (!user.btn) { %>
-
-                    <button   style='    background: #393771;
+                <button style='    background: #393771;
                     color: white;
                     padding: 5%;
                     margin: 1% 5% 10%;
                     width: 90%;
                     border-radius: 5px;
-                        cursor:pointer
-                '>
+                    cursor:pointer
+                    '>
                                 <a style='    color: white;
-                    font-size: 1.3rem;' href='/users/withdraw/?id=<%=user._id%>'>Withdraw</a>
+                    font-size: 1.3rem;' href='/users/Invest/?id=<%=user._id%>'>withdraw</a>
                 </button>
-
-                    <%} %>
+              
                 
                 </div>
 
@@ -365,198 +344,7 @@
           </div>
         </section>
         <!-- END STATISTIC-->
-        <% if (user.paired.length > 0) {%>
-                        <div class="col-md-6 col-lg-4" style='max-width:90%; margin:5%'>
-                        <!-- TOP CAMPAIGN-->
-
-                            <% user.paired.map((item)=>{ %>
-                                    <div class="top-campaign">
-
-
-                            
-                                <h3 class="title-3 m-b-30">You have been Paired with <%=item.name%></h3>
-
-                              <a style='  cursor:pointer; float: right; margin-top: -6%; font-size: 2rem; color: red;' href='/users/close_paired/?id=<%=item.userId%>&myId=<%=user._id%>'> <i class="fa fa-window-close" style='  cursor:pointer; float: right; margin-top: -6%; font-size: 2rem; color: red;' aria-hidden="true"></i></a> 
-
-                                
-                                <div class="table-responsive">
-                                    <table class="table table-top-campaign">
-                                        <tbody>
-                                            <tr>
-                                                <td>Name</td>
-                                                <td><%=item.name%></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Phone Number</td>
-                                                <td><%=item.phone%></td>
-                                            </tr>
-                                            <tr>
-                                                <td>To pay in </td>
-                                                <td><%=item.amount%></td>
-                                            </tr>
-                                            
-                                        </tbody>
-                                    </table>
-                                </div>
-
-                                <img style=' margin: 5% 0;' src='<%=user.proof[0].img%>' />
-
-                                <button style='    background: #393771;
-                                    color: white;
-                                    padding: 2%;
-                                    margin: 5% 5% 0%;
-                                    width: 90%;
-                                    border-radius: 5px;
-                                        cursor:pointer
-                                '>
-                                    <a style='    color: white;
-                        font-size: 1.3rem;' href='/users/confirm/?id=<%=user._id%>'>Confirm Payment</a>
-                                    </button>
-                           
-                           </div>
-
-       <% }) %>
-
-       
-  <!-- END TOP CAMPAIGN-->
-                        </div>
-        
-        <!-- END PAGE CONTAINER-->
-             </div>
-
-
-        <% } else{ %>
-
-       <% if (user.paring === true && !user.paired) { %>
-            <div style='margin:10%'>
-
-            <button style='    background: green;
-            color: white;
-            padding: 2%;
-            margin: 5% 5% 5%;
-            width: 90%;
-            border-radius: 5px;
-            cursor:pointer'>
-            <a style='    color: white;
-            font-size: 1.3rem;' href='/users/comfirm/?id=<%=user._id%>'><i class="fa fa-spinner fa-spin" style="font-size:24px"></i> Pairing</a>
-            </button>
-            </div>
-
-
-
-       <% } %>
-
-         <% if (user.paring === true ) { %>
-            <div style='margin:10%'>
-
-
-            <button style='    background: green;
-            color: white;
-            padding: 2%;
-            margin: 5% 5% 5%;
-            width: 90%;
-            border-radius: 5px;
-            cursor:pointer'>
-            <a style='    color: white;
-            font-size: 1.3rem;' href='/users/comfirm/?id=<%=user._id%>'><i class="fa fa-spinner fa-spin" style="font-size:24px"></i> Pairing</a>
-            </button>
-            </div>
-
-
-
-       <% } %>
-
-
-        <% } %>
-
-
-       <% if (user.payto.length > 0){ %>
-
-       <% let data = user.payto[0] %>
-
-                <div class="col-md-6 col-lg-4" style='max-width:90%; margin:5%'>
-                            <!-- TOP CAMPAIGN-->
-                            <div class="top-campaign">
-                                <h3 class="title-3 m-b-30">You have been Paired with <%=data.payName%>, Pay into this Account</h3>
-
-                              <a style='  cursor:pointer; float: right; margin-top: -6%; font-size: 2rem; color: red;' href='/users/close_payto/?id=<%=data.payId%>&myId=<%=user._id%>'> <i class="fa fa-window-close" style=' float: right; margin-top: -6%; font-size: 2rem; color: red;' aria-hidden="true"></i></a> 
-
-                                
-                                <div class="table-responsive">
-                                    <table class="table table-top-campaign">
-                                        <tbody>
-                                            <tr>
-                                                <td>Name</td>
-                                                <td><%=data.payName%></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Phone Number</td>
-                                                <td><%=data.payPhone%></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Account No </td>
-                                                <td><%=data.payAccNo%></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Account Name</td>
-                                                <td><%=data.payAccName%></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Bank Name</td>
-                                                <td><%=data.payBank%></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Amount to pay </td>
-                                                <td><%=data.payAmount%></td>
-                                            </tr>
-                                            
-                                        </tbody>
-                                    </table>
-                                </div>
-
-                                <form action="/users/proof/?id=<%=user._id%>" method="POST" >
-
-
-
-                                    <div class="upload-btn-wrapper" style='margin-top:5%; width: 100%;'>
-                                     <td> upload your prove of payment</td>
-
-                                     <button class="btn">Upload a file</button>
-                                     <input type="hidden" value="" name="img"  id='HF'/>
-
-
-                                    <input type="file" accept="image/png, image/jpeg, image/jpg"  value="" name="myfile"  id='F' class='change'/>
-                                    <label for="create_product_image" class="product_image_label" style="outline:none; color:#6a1b8b; background:none; text-align:center; padding: 15px 0px 8px">Click to choose a file
-                                    </div>
-
-                                    <button type='submit' style='    background: #393771;
-                                    color: white;
-                                    padding: 2%;
-                                    margin: 5% 5% 0%;
-                                    width: 90%;
-                                    border-radius: 5px;
-                                        cursor:pointer
-                                '>
-                                        Send Proof
-                                    </button>
-                                </form>
-
-                               
-                                
-                            </div>
-                            <!-- END TOP CAMPAIGN-->
-                        </div>
-        
-        <!-- END PAGE CONTAINER-->
-      </div>
-
-
-        <% }else{ %>
-
-       
-
-        <%} %>
-
+     
 
 
        
