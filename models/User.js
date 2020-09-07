@@ -6,6 +6,19 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  name: {
+    type: String,
+    required: true
+  },
+
+  walletName: {
+    type: String,
+    required: true
+  },
+  walletId: {
+    type: String,
+    required: true
+  },
 
   password: {
     type: String,

@@ -1824,3 +1824,11 @@ ol {
     padding-bottom: 90px;
     margin: auto;
 }
+
+.statistic__item .desc {
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 300;
+    color: rgba(128, 128, 128, 0.6);
+    word-break: break-word;
+}

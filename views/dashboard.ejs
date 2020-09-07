@@ -172,6 +172,32 @@
     background: #ffffff;
     padding-bottom: 40vh;
 }
+.account2 {
+    padding: 19px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -moz-box-orient: vertical;
+    -moz-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    border-bottom: 1px solid #f2f2f2;
+}
     </style>
   </head>
 
@@ -189,7 +215,7 @@
             <div class="image img-cir img-120">
               <img src="https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png" alt="John Doe" />
             </div>
-            <h4 class="name"> Welcome User</h4>
+            <h4 class="name"> Welcome <%= user.name %></h4>
           </div>
           <nav class="navbar-sidebar2">
             
@@ -213,6 +239,23 @@
 
           </div>
 
+ <div class='account2'>
+                    <h4 class='name' style='text-align:center'> Wallet Name</h4>
+                    <h4><%= user.walletName %></h4>
+
+                 
+
+
+          </div>
+
+           <div class='account2'>
+                    <h4 class='name' style='text-align:center'> Wallet Id</h4>
+       <h4 style='font-size: 12px;
+    word-break: break-all;
+    font-weight: 700;
+}'><%= user.walletId %></h4>
+
+          </div>
 
 
 <a href="/users/logout" class="btn btn-secondary">Logout</a>
@@ -253,7 +296,7 @@
               <div class="image img-cir img-120">
                 <img src="https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png" alt="John Doe" />
               </div>
-              <h4 class="name">Welcome User</h4>
+              <h4 class="name">Welcome <%= user.name %></h4>
             </div>
             <nav class="navbar-sidebar2">
 
@@ -275,6 +318,26 @@
 
 
           </div>
+
+           <div class='account2'>
+                    <h4 class='name' style='text-align:center'> Wallet Name</h4>
+                    <h4><%= user.walletName %></h4>
+
+                 
+
+
+          </div>
+
+           <div class='account2'>
+                    <h4 class='name' style='text-align:center'> Wallet Id</h4>
+                    <h4 style='  font-size: 12px;
+    word-break: break-all;
+    font-weight: 700;
+}'><%= user.walletId %></h4>
+
+          </div>
+
+
 
 
 <a href="/users/logout" class="btn btn-secondary">Logout</a>
@@ -308,7 +371,7 @@
                     cursor:pointer
                     '>
                                 <a style='    color: white;
-                    font-size: 1.3rem;' href='/users/Invest/?id=<%=user._id%>'>Invest Now</a>
+                    font-size: 1.3rem;' href='/investNow'>Invest Now</a>
                 </button>
 
                 </div>
@@ -333,7 +396,7 @@
                     cursor:pointer
                     '>
                                 <a style='    color: white;
-                    font-size: 1.3rem;' href='/users/Invest/?id=<%=user._id%>'>withdraw</a>
+                    font-size: 1.3rem;' href='/withdrawNow'>withdraw</a>
                 </button>
               
                 
