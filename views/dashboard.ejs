@@ -245,7 +245,6 @@
 }
 .page-wrapper {
     overflow: hidden;
-    background: linear-gradient(to right, #3e2bce 0%, #2dd3aa 100%, #2dd3aa 100%, #2dd3aa 100%) !important;
     padding-bottom: 0vh;
 }
 .menu-sidebar2 .logo {
@@ -260,6 +259,170 @@
 .section__content--p30 {
     padding: 55px 30px;
 }
+
+.statistic {
+    padding-top: 57px;
+    margin-top: 3%;
+    background: whitesmoke !important;
+}
+
+.menu-sidebar2 {
+   
+    background: #393771;
+    color: white;
+}
+
+.account2 {
+   
+    border-bottom: 1px solid #2d2c58;
+}
+
+.account2 .name {
+    text-transform: capitalize;
+    font-weight: 500;
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    color: white;
+}
+.menu-sidebar2 .logo {
+    background: #393771;
+    height: 80px;
+}
+
+.header-desktop2 {
+    background: #393771;
+    height: 83px;
+    border-bottom: 1px solid white;
+}
+
+.header-button2 .header-button-item i {
+    vertical-align: middle;
+    color: white;
+}
+
+
+
+.card1{
+  position: relative;
+  max-width: 300px;
+  height: auto;
+  background: linear-gradient(-45deg,#fe0847,#feae3f);
+  border-radius: 15px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  -webkit-box-shadow: 0 10px 15px rgba(0,0,0,.1) ;
+          box-shadow: 0 10px 15px rgba(0,0,0,.1) ;
+-webkit-transition: .5s;
+transition: .5s;
+}
+.card1:hover{
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+.col-sm-4:nth-child(1) .card1 ,
+.col-sm-4:nth-child(1) .card1 .title .fa{
+  background: linear-gradient(-45deg,#f403d1,#64b5f6);
+
+}
+.col-sm-4:nth-child(2) .card1,
+.col-sm-4:nth-child(2) .card1 .title .fa{
+  background: linear-gradient(-45deg,#ffec61,#f321d7);
+
+}
+.col-sm-4:nth-child(3) .card1,
+.col-sm-4:nth-child(3) .card1 .title .fa{
+  background: linear-gradient(-45deg,#24ff72,#9a4eff);
+
+}
+.card1::before{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background: rgba(255, 255, 255, .1);
+z-index: 1;
+-webkit-transform: skewY(-5deg) scale(1.5);
+        transform: skewY(-5deg) scale(1.5);
+}
+.title .fa{
+  color:#fff;
+  font-size: 60px;
+  width: 100px;
+  height: 100px;
+  border-radius:  50%;
+  text-align: center;
+  line-height: 100px;
+  -webkit-box-shadow: 0 10px 10px rgba(0,0,0,.1) ;
+          box-shadow: 0 10px 10px rgba(0,0,0,.1) ;
+
+}
+.title h2 {
+  position: relative;
+  margin: 20px  0 0;
+  padding: 0;
+  color: #fff;
+  font-size: 28px;
+ z-index: 2;
+}
+.price,.option{
+  position: relative;
+  z-index: 2;
+}
+.price h4 {
+margin: 0;
+padding: 20px 0 ;
+color: #fff;
+font-size: 60px;
+}
+.option ul {
+  margin: 0;
+  padding: 0;
+
+}
+.option ul li {
+margin: 0 0 10px;
+padding: 0;
+list-style: none;
+color: #fff;
+font-size: 16px;
+}
+.card1 a {
+  position: relative;
+  z-index: 2;
+  background: #fff;
+  color : black;
+  width: 150px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 40px;
+  display: block;
+  text-align: center;
+  margin: 20px auto 0 ;
+  font-size: 16px;
+  cursor: pointer;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
+          box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
+
+}
+.card1 a:hover{
+    text-decoration: none;
+}
+.price h4 {
+    margin: 0;
+    padding: 20px 0;
+    color: #fff;
+    font-size: 41px;
+}
+
+.price h4 {
+    margin: 0;
+    padding: 20px 0;
+    color: #fff;
+    font-size: 32px;
+}
     </style>
   </head>
 
@@ -269,13 +432,14 @@
       <aside class="menu-sidebar2">
         <div class="logo">
           <a href="/">
-            <img src="../assets/img/octalogo.png" style='width:35%' alt="logo" />
+            <img src="../assets/img/octaxlogo.png" style='width: 90%;
+    margin-left: 45%;' alt="logo" />
           </a>
         </div>
         <div class="menu-sidebar2__content js-scrollbar1">
           <div class="account2">
             <div class="image img-cir img-120">
-              <img src="https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png" alt="John Doe" />
+              <img src="data:image/jpeg;base64,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" alt="John Doe" />
             </div>
             <h4 class="name"> Welcome <%= user.name %></h4>
           </div>
@@ -289,13 +453,14 @@
 
            <div class='account2'>
                     <h4 class='name' style='text-align:center'> Number of Persons Referred</h4>
-                    <h4><%= user.reffered %></h4>
+                    <h4 style='color:white'><%= user.reffered %></h4>
 
                     <p class='name'>referal link: </p>
 
-                   <p style='    font-size: 12px;
+                   <p style='  color:white  font-size: 12px;
     word-break: break-all;
-    font-weight: 700;'> http://www.octafx.com/users/i/?id=<%=user._id%></p>
+    font-weight: 700;
+    color:white'> http://www.octafx.com/users/i/?id=<%=user._id%></p>
                    <br>
 
 
@@ -303,7 +468,7 @@
 
  <div class='account2'>
                     <h4 class='name' style='text-align:center'> Wallet Name</h4>
-                    <h4><%= user.walletName %></h4>
+                    <h4 style='color:white'><%= user.walletName %></h4>
 
                  
 
@@ -315,6 +480,7 @@
        <h4 style='font-size: 12px;
     word-break: break-all;
     font-weight: 700;
+    color:white;
 }'><%= user.walletId %></h4>
 
           </div>
@@ -335,7 +501,8 @@
               <div class="header-wrap2">
                 <div class="logo d-block d-lg-none">
                   <a href="/">
-            <img src="../assets/img/octalogo.png" style='width:35%' alt="logo" />
+            <img src="../assets/img/octaxlogo.png" style='width: 90%;
+    margin-left: 45%;' alt="logo" />
                   </a>
                 </div>
                 <div class="header-button2">
@@ -356,7 +523,7 @@
           <div class="menu-sidebar2__content js-scrollbar2">
             <div class="account2">
               <div class="image img-cir img-120">
-                <img src="https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png" alt="John Doe" />
+                <img src="data:image/jpeg;base64,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" alt="John Doe" />
               </div>
               <h4 class="name">Welcome <%= user.name %></h4>
             </div>
@@ -369,13 +536,15 @@
 
            <div class='account2'>
                     <h4 class='name' style='text-align:center'> Number of Persons Referred</h4>
-                    <h4><%= user.reffered %></h4>
+                    <h4 style='color:white'><%= user.reffered %></h4>
 
                     <p class='name'>referal link: </p>
 
                    <p style='    font-size: 12px;
     word-break: break-all;
-    font-weight: 700;' style='text-align:center'> http://codabae.herokuapp.com/users/i/?id=<%=user._id%></p>
+    font-weight: 700;
+    color:white
+    ' style='text-align:center'> http://codabae.herokuapp.com/users/i/?id=<%=user._id%></p>
                    <br>
 
 
@@ -383,7 +552,7 @@
 
            <div class='account2'>
                     <h4 class='name' style='text-align:center'> Wallet Name</h4>
-                    <h4><%= user.walletName %></h4>
+                    <h4 style='color:white'><%= user.walletName %></h4>
 
                  
 
@@ -395,6 +564,7 @@
                     <h4 style='  font-size: 12px;
     word-break: break-all;
     font-weight: 700;
+    color:white;
 }'><%= user.walletId %></h4>
 
           </div>
@@ -589,6 +759,20 @@
         </div>
         <!-- header area end -->
         <!-- page title area start -->
+        <h3>
+           Welcome to OctaFxoptions
+        </h3>
+
+        <p style='    margin-bottom: 5%;
+'>
+     
+        <br />
+To start earning, choose your required investment plan and invest through the available payment methods
+After you have invested, upload a screenshot of successful transaction to Octafxoptionplus@gmail.com
+Ensure to add your preferred withdrawal method on your profile
+        </p>
+       
+
         <div class="page-title-area">
             <div class="row align-items-center">
                 <div class="col-sm-6">
@@ -664,6 +848,121 @@
             </div>
         </div>
         <!-- page title area end -->
+
+ <section style='  width: 100%;
+  height: auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+          padding: 60px 0;'>
+       <h2 style='text-align:center; margin-bottom:5%'>Find an Investment Plan That's Right For You
+</h2>
+  <div class="container-fluid">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="card1 text-center">
+            <div class="title">
+              <i class="fa fa-paper-plane" aria-hidden="true"></i>
+              <h2>Basic</h2>
+            </div>
+            <div class="price">
+              <h4><sup></sup>Investment plans</h4>
+            </div>
+            <div class="option">
+              <ul>
+              <li> <i class="fa fa-check" aria-hidden="true"></i>               48 hours Investment Time
+</li>
+              <li> <i class="fa fa-check" aria-hidden="true"></i> Minimum $100: 1 Via Bitcoin or Etherium </li>
+              <li> <i class="fa fa-check" aria-hidden="true"></i> Transfer Fee: $10 For withdrawal charges
+</li>
+              <li> <i class="fa fa-times" aria-hidden="true"></i> Profit Margin: 500%
+ </li>
+                    <li> <i class="fa fa-check" aria-hidden="true"></i> Automatic payout in BTC
+</li>
+              <li> <i class="fa fa-check" aria-hidden="true"></i> Available for new Investors
+ </li>
+              <li> <i class="fa fa-check" aria-hidden="true"></i>Renewal Optional
+ </li>
+              <li> <i class="fa fa-times" aria-hidden="true"></i> 5%
+Referral Bonus </li>
+              </ul>
+
+
+            </div>
+            <a href="../users/register">Invest Now </a>
+          </div>
+        </div>
+        <!-- END Col one -->
+        <div class="col-sm-4">
+          <div class="card1 text-center">
+            <div class="title">
+              <i class="fa fa-plane" aria-hidden="true"></i>
+              <h2>Standard</h2>
+            </div>
+            <div class="price">
+              <h4><sup></sup>Investment plans</h4>
+            </div>
+            <div class="option">
+              <ul>
+              <li> <i class="fa fa-check" aria-hidden="true"></i>               24 hours Investment Time
+</li>
+              <li> <i class="fa fa-check" aria-hidden="true"></i> Minimum $100: 1 Via Bitcoin or Etherium </li>
+              <li> <i class="fa fa-check" aria-hidden="true"></i> Transfer Fee: $300 For withdrawal charges
+</li>
+              <li> <i class="fa fa-times" aria-hidden="true"></i> Profit Margin: 500%-700%
+ </li>
+                    <li> <i class="fa fa-check" aria-hidden="true"></i> Automatic payout in BTC
+</li>
+              <li> <i class="fa fa-check" aria-hidden="true"></i> Available for new Investors
+ </li>
+              <li> <i class="fa fa-check" aria-hidden="true"></i>Renewal Optional
+ </li>
+              <li> <i class="fa fa-times" aria-hidden="true"></i> 10%
+Referral Bonus </li>
+              </ul>
+            </div>
+            <a href="../users/register">Invest Now </a>
+          </div>
+        </div>
+        <!-- END Col two -->
+        <div class="col-sm-4">
+          <div class="card1 text-center">
+            <div class="title">
+              <i class="fa fa-rocket" aria-hidden="true"></i>
+              <h2>Premium</h2>
+            </div>
+            <div class="price">
+              <h4><sup></sup>Investment plans</h4>
+            </div>
+            <div class="option">
+              <ul>
+               <li> <i class="fa fa-check" aria-hidden="true"></i>               12 hours Investment Time
+</li>
+              <li> <i class="fa fa-check" aria-hidden="true"></i> Minimum $500: 1 Via Bitcoin or Etherium </li>
+              <li> <i class="fa fa-check" aria-hidden="true"></i> Transfer Fee:  none
+</li>
+              <li> <i class="fa fa-times" aria-hidden="true"></i> Profit Margin: 10%
+ </li>
+                    <li> <i class="fa fa-check" aria-hidden="true"></i> Automatic Payout in Bitcoin, Skrill, Cash App, Paypal and Bank Transfer
+
+</li>
+              <li> <i class="fa fa-check" aria-hidden="true"></i>Only Available To Advanced Plan Investors
+ </li>
+              <li> <i class="fa fa-check" aria-hidden="true"></i>Renewal Optional
+ </li>
+              <li> <i class="fa fa-times" aria-hidden="true"></i> 20%
+Referral Bonus </li>
+              </ul>
+            </div>
+            <a href="../users/register">Invest Now </a>
+          </div>
+        </div>
+        <!-- END Col three -->
+      </div>
+    </div>
+  </div>
+</section>
+
         <div class="main-content-inner">
             <!-- sales report area start -->
             <div class="sales-report-area mt-5 mb-5">
@@ -718,33 +1017,7 @@
                     </div>
                 </div>
             </div>
-            <!-- sales report area end -->
-            <!-- overview area start -->
-            <div class="row">
-                <div class="col-xl-9 col-lg-8">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <h4 class="header-title mb-0">Overview</h4>
-                                <select class="custome-select border-0 pr-3">
-                                    <option selected>Last 24 Hours</option>
-                                    <option value="0">01 July 2018</option>
-                                </select>
-                            </div>
-                            <div id="verview-shart"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 coin-distribution">
-                    <div class="card h-full">
-                        <div class="card-body">
-                            <h4 class="header-title mb-0">Coin Distribution</h4>
-                            <div id="coin_distribution"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- overview area end -->
+           
             <!-- market value area start -->
             <div class="row mt-5 mb-5">
                 <div class="col-12">
@@ -829,133 +1102,6 @@
             </div>
             <!-- market value area end -->
             <!-- row area start -->
-            <div class="row">
-                <!-- Live Crypto Price area start -->
-                <div class="col-lg-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h4 class="header-title">Live Crypto Price</h4>
-                            <div class="cripto-live mt-5">
-                                <ul>
-                                    <li>
-                                        <div class="icon b">b</div> Bitcoin<span><i class="fa fa-long-arrow-up"></i>$876909.00</span></li>
-                                    <li>
-                                        <div class="icon l">l</div> Litecoin<span><i class="fa fa-long-arrow-up"></i>$29780.00</span></li>
-                                    <li>
-                                        <div class="icon d">d</div> Dashcoin<span><i class="fa fa-long-arrow-up"></i>$13276.00</span></li>
-                                    <li>
-                                        <div class="icon b">b</div> Bitcoindash<span><i class="fa fa-long-arrow-down"></i>$5684.890</span></li>
-                                    <li>
-                                        <div class="icon e">e</div> Ethererum<span><i class="fa fa-long-arrow-down"></i>$3890.98</span></li>
-                                    <li>
-                                        <div class="icon t">b</div> Tcoin<span><i class="fa fa-long-arrow-up"></i>$750.789</span></li>
-                                    <li>
-                                        <div class="icon b">b</div> Bitcoin<span><i class="fa fa-long-arrow-up"></i>$325.037</span></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Live Crypto Price area end -->
-                <!-- trading history area start -->
-                <div class="col-lg-8 mt-sm-30 mt-xs-30">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="d-sm-flex justify-content-between align-items-center">
-                                <h4 class="header-title">Trading History</h4>
-                                <div class="trd-history-tabs">
-                                    <ul class="nav" role="tablist">
-                                        <li>
-                                            <a class="active" data-toggle="tab" href="#buy_order" role="tab">Buy Order</a>
-                                        </li>
-                                        <li>
-                                            <a data-toggle="tab" href="#sell_order" role="tab">Sell Order</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <select class="custome-select border-0 pr-3">
-                                    <option selected>Last 24 Hours</option>
-                                    <option value="0">01 July 2018</option>
-                                </select>
-                            </div>
-                            <div class="trad-history mt-4">
-                                <div class="tab-content" id="myTabContent">
-                                    <div class="tab-pane fade show active" id="buy_order" role="tabpanel">
-                                        <div class="table-responsive">
-                                            <table class="dbkit-table">
-                                                <tr class="heading-td">
-                                                    <td>Trading ID</td>
-                                                    <td>Time</td>
-                                                    <td>Status</td>
-                                                    <td>Amount</td>
-                                                    <td>Last Trade</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>78211</td>
-                                                    <td>4.00 AM</td>
-                                                    <td>Pending</td>
-                                                    <td>$758.90</td>
-                                                    <td>$05245.090</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>782782</td>
-                                                    <td>4.00 AM</td>
-                                                    <td>Pending</td>
-                                                    <td>$77878.90</td>
-                                                    <td>$7778.090</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>89675978</td>
-                                                    <td>4.00 AM</td>
-                                                    <td>Pending</td>
-                                                    <td>$0768.90</td>
-                                                    <td>$0945.090</td>
-                                                </tr>
-                                            </table>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="sell_order" role="tabpanel">
-                                        <div class="table-responsive">
-                                            <table class="dbkit-table">
-                                                <tr class="heading-td">
-                                                    <td>Trading ID</td>
-                                                    <td>Time</td>
-                                                    <td>Status</td>
-                                                    <td>Amount</td>
-                                                    <td>Last Trade</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>8964978</td>
-                                                    <td>4.00 AM</td>
-                                                    <td>Pending</td>
-                                                    <td>$445.90</td>
-                                                    <td>$094545.090</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>89675978</td>
-                                                    <td>4.00 AM</td>
-                                                    <td>Pending</td>
-                                                    <td>$78.90</td>
-                                                    <td>$074852945.090</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>78527878</td>
-                                                    <td>4.00 AM</td>
-                                                    <td>Pending</td>
-                                                    <td>$0768.90</td>
-                                                    <td>$65465.090</td>
-                                                </tr>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- trading history area end -->
-            </div>
-            <!-- row area end -->
            
             <!-- row area start-->
         </div>
