@@ -116,6 +116,64 @@
         margin: 1%;
         justify-content: center;
       }
+      select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background: #2c3e50;
+  background-image: none;
+}
+/* Remove IE arrow */
+select::-ms-expand {
+  display: none;
+}
+/* Custom Select */
+.select {
+  position: relative;
+  display: flex;
+  width: 20em;
+  height: 3em;
+  line-height: 3;
+  background: #2c3e50;
+  overflow: hidden;
+  border-radius: .25em;
+}
+select {
+    flex: 1;
+    padding: 10px 5.5em;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 27px;
+}
+/* Arrow */
+.select::after {
+  content: '\25BC';
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 1em;
+  background: #34495e;
+  cursor: pointer;
+  pointer-events: none;
+  -webkit-transition: .25s all ease;
+  -o-transition: .25s all ease;
+  transition: .25s all ease;
+}
+/* Transition */
+.select:hover::after {
+  color: #f39c12;
+}
+select {
+    flex: 1;
+    padding: 10px 4.5em;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 27px;
+}
     </style>
   </head>
   <body>
@@ -151,6 +209,19 @@
 
             <div
               class="wrap-input100 validate-input"
+              data-validate="amount is required"
+            >
+  <select name="plan" id="slct">
+    <option selected disabled>Choose an option</option>
+    <option value="Basic">Basic</option>
+    <option value="Advanced">Advanced</option>
+    <option value="Premium">Premium</option>
+  </select>
+            </div>
+
+
+            <div
+              class="wrap-input100 validate-input"
               data-validate="Payment Method is required"
             >
               <input
@@ -164,7 +235,27 @@
                 <i class="fa fa-money" aria-hidden="true"></i>
               </span>
             </div>
-              <p style='magin:5%'>(cryto-currency, bank payments etc)</p>
+             <div               class="wrap-input100 validate-input"
+>
+              <br>
+
+              <h5 style='magin:5%'>(Cryto-Currency Payment)</h5>
+              <br>
+
+              <p style='magin:5%'>Bitcoin : 
+              324aW3dGFeJ1zAhJjF8EEzYqGQ1cg4yCVz
+              </p>
+
+               <p style='magin:5%'>Etherium : 
+              0xbbb7475388Ba52b5369984851DB23306318dD976
+              </p>
+             </div>
+
+           
+
+              
+
+              
 
             <div class="container-login100-form-btn">
               <button class="login100-form-btn">Invest</button>

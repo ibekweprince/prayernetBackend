@@ -22,6 +22,9 @@ const WithdrawSchema = new mongoose.Schema({
         type: String,
 
     },
+    plan: {
+        type: String,
+    },
     date: {
         type: Date,
         default: Date.now

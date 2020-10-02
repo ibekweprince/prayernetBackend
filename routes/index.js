@@ -15,10 +15,10 @@ router.get('/investNow', ensureAuthenticated, (req, res) => {
 });
 
 router.post('/investNow', ensureAuthenticated, (req, res) => {
-  const { amount, method } = req.body;
+  const { amount, method,plan } = req.body;
   let errors = [];
 
-  if (!amount || !method) {
+  if (!amount || !method || !plan) {
     errors.push({ msg: 'Please enter all fields' });
   }
 
@@ -29,6 +29,7 @@ router.post('/investNow', ensureAuthenticated, (req, res) => {
       errors,
       amount,
       method,
+      plan
 
     });
   } else {
@@ -36,6 +37,7 @@ router.post('/investNow', ensureAuthenticated, (req, res) => {
     const newUser = new Invest({
       amount,
       method,
+      plan,
       email: userD.email
 
 
@@ -62,10 +64,10 @@ router.get('/withdrawNow', ensureAuthenticated, (req, res) => res.render('withdr
 }));
 
 router.post('/withdrawNow', ensureAuthenticated, (req, res) => {
-  const { amount, method, } = req.body;
+  const { amount, method,plan } = req.body;
   let errors = [];
 
-  if (!amount || !method) {
+  if (!amount || !method || !plan) {
     errors.push({ msg: 'Please enter all fields' });
   }
 
@@ -76,6 +78,7 @@ router.post('/withdrawNow', ensureAuthenticated, (req, res) => {
       errors,
       amount,
       method,
+      plan
 
 
 
@@ -86,6 +89,7 @@ router.post('/withdrawNow', ensureAuthenticated, (req, res) => {
     const newUser = new Withdraw({
       amount,
       method,
+      plan,
       email: userD.email,
       walletId: userD.walletId,
       walletName: userD.walletName,

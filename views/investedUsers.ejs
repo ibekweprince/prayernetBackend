@@ -187,6 +187,41 @@
     background: linear-gradient(to right, #3e2bce 0%, #2dd3aa 100%, #2dd3aa 100%, #2dd3aa 100%) !important;
     padding-bottom: 40vh;
 }
+.page-wrapper {
+    overflow: hidden;
+    background: #ffffff;
+    padding-bottom: 40vh;
+}
+.statistic {
+    padding-top: 57px;
+    margin-top: 3%;
+    background: linear-gradient(to right, #3e2bce 0%, #2dd3aa 100%, #2dd3aa 100%, #2dd3aa 100%) !important
+}
+.header-desktop2 {
+    background: #ffffff;
+    height: 153px;
+    border-bottom: 1px solid white;
+}
+.page-wrapper {
+    overflow: hidden;
+    background: linear-gradient(to right, #3e2bce 0%, #2dd3aa 100%, #2dd3aa 100%, #2dd3aa 100%) !important;
+    padding-bottom: 40vh;
+}
+.header-desktop2 {
+    background: #f2f2f2;
+    height: 153px;
+    border-bottom: 1px solid white;
+}
+.statistic {
+    padding-top: 57px;
+    margin-top: 3%;
+    background: white  !important;
+}
+.page-wrapper {
+    overflow: hidden;
+    background:white  !important;
+    padding-bottom: 40vh;
+}
     </style>
   </head>
 
@@ -375,7 +410,8 @@
                    <% user.map((user) =>{ %>
                                              <div class="statistic__item">
 
-                  <h4 class="desc">Email : <%= user.email %></h4>     
+                  <h4 class="desc">Email : <%= user.email %></h4>  
+                   <h4 class="desc">Plan : <%= user.plan %></h4>     
                     <h4 class="desc">Amount : <%= user.amount%></h4>
                     <h4 class="desc">Payment Method: <%= user.method%></h4>
                     <div class="icon">

@@ -14,6 +14,9 @@ const InvestSchema = new mongoose.Schema({
     email: {
         type: String,
     },
+    plan: {
+        type: String,
+    },
     date: {
         type: Date,
         default: Date.now
