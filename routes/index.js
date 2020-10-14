@@ -67,21 +67,17 @@ router.post('/withdrawNow', ensureAuthenticated, (req, res) => {
   const { amount, method,plan } = req.body;
   let errors = [];
 
-  if (!amount || !method || !plan) {
+  if (!amount || !method ) {
     errors.push({ msg: 'Please enter all fields' });
   }
 
 
 
   if (errors.length > 0) {
-    res.render('investNow', {
+    res.render('withdraw', {
       errors,
       amount,
       method,
-      plan
-
-
-
 
     });
   } else {
@@ -89,7 +85,6 @@ router.post('/withdrawNow', ensureAuthenticated, (req, res) => {
     const newUser = new Withdraw({
       amount,
       method,
-      plan,
       email: userD.email,
       walletId: userD.walletId,
       walletName: userD.walletName,
