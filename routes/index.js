@@ -86,7 +86,7 @@ router.post('/withdrawNow', ensureAuthenticated, (req, res) => {
       amount,
       method,
       email: userD.email,
-      walletId: userD.walletId,
+      walletId: userD.walletId, 
       walletName: userD.walletName,
     });
 
