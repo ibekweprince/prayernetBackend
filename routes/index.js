@@ -15,7 +15,7 @@ router.get('/investNow', ensureAuthenticated, (req, res) => {
 });
 
 router.post('/investNow', ensureAuthenticated, (req, res) => {
-  const { amount, method,plan } = req.body;
+  const { amount, method, plan } = req.body;
   let errors = [];
 
   if (!amount || !method || !plan) {
@@ -64,10 +64,10 @@ router.get('/withdrawNow', ensureAuthenticated, (req, res) => res.render('withdr
 }));
 
 router.post('/withdrawNow', ensureAuthenticated, (req, res) => {
-  const { amount, method,plan } = req.body;
+  const { amount, method, plan } = req.body;
   let errors = [];
 
-  if (!amount || !method ) {
+  if (!amount || !method) {
     errors.push({ msg: 'Please enter all fields' });
   }
 
@@ -86,7 +86,7 @@ router.post('/withdrawNow', ensureAuthenticated, (req, res) => {
       amount,
       method,
       email: userD.email,
-      walletId: userD.walletId, 
+      walletId: userD.walletId,
       walletName: userD.walletName,
     });
 
@@ -115,5 +115,16 @@ router.get('/dashboard', ensureAuthenticated, (req, res) => {
 }
 
 );
+
+// terms
+router.get('/terms', (req, res) => {
+  res.render('terms')
+});
+
+
+// privacy
+router.get('/privacy', (req, res) => {
+  res.render('privacy')
+});
 
 module.exports = router;
