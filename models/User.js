@@ -6,16 +6,16 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  name: {
+  firstname: {
     type: String,
     required: true
   },
 
-  walletName: {
+  lastname: {
     type: String,
     required: true
   },
-  walletId: {
+  username: {
     type: String,
     required: true
   },
@@ -24,17 +24,12 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  invested: {
-    type: String,
-
+  goals: {
+    type: [Object],
   },
-  reffered: {
-    type: String,
+  group: {
+    type: [Object],
   },
-  withdraw: {
-    type: String,
-  },
-
   date: {
     type: Date,
     default: Date.now
