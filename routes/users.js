@@ -74,12 +74,55 @@ router.post('/register', (req, res) => {
 });
 
 
+//change password
+router.put("/password/:id", async (req, res) => {
+  try {
+    const _id = req.params.id
+    let { password, password2, old_password } = req.body
+    let error = [];
+
+    if (password != password2) {
+      error.push({ msg: 'Passwords do not match' });
+    }
+
+    if (error) {
+      return res.status(400).json({
+        error: error
+      })
+    }
+
+    let data = await UserModel.findOne({ _id })
+    if (!data) {
+      return res.status(400).json({
+        error: "User does not exist in database"
+      })
+    } else {
+
+      const isValid = await bcrypt.compare(old_password, data.password)
+      if (isValid) {
+        password = await bcrypt.hash(password, 15)
+        const newUser = await UserModel.findOneAndUpdate({ _id }, { password }, { new: true })
+        return res.status(201).json(newUser)
+      } else {
+        return res.status(400).json({
+          error: "Incorrect Password"
+        })
+      }
+    }
+
+  } catch (err) {
+    console.log(err)
+
+  }
+
+})
+
 
 // Set Goals
 router.post('/setGoal:user_id ', (req, res) => {
   const { goal, amount } = req.body;
 
-  const user_id = req.query.user_id
+  const user_id = req.params.user_id
   let errors = [];
 
   if (!goal || !amount) {
@@ -123,7 +166,7 @@ router.post('/setGoal:user_id ', (req, res) => {
 
 // create group
 router.post('/createGroup:user_id', (req, res) => {
-  const user_id = req.query.user_id
+  const user_id = req.params.user_id
 
   const { name, des, img, display } = req.body;
   let errors = [];
@@ -187,8 +230,8 @@ router.post('/createGroup:user_id', (req, res) => {
 // join group
 router.post('/joinGroup:user_id:group_id', (req, res) => {
 
-  const user_id = req.query.user_id
-  const group_id = req.query.group_id
+  const user_id = req.params.user_id
+  const group_id = req.params.group_id
 
   Group.findOne({ _id: group_id }).then(group => {
     User.updateOne({ _id: user_id }, { $push: { groups: group } },
