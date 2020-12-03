@@ -14,6 +14,10 @@ const CreateGroupSchema = new mongoose.Schema({
         type: [Object],
         required: true
     },
+    display: {
+        type: Boolean,
+        required: true
+    },
     groupUsers: {
         type: [Object],
       },
