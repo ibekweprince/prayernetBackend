@@ -1,3 +1,3 @@
-# octafx
-new project about forex trading
+# prayernet
+new project about praying
 # prayernet
