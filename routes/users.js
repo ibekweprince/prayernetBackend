@@ -11,6 +11,9 @@ const Post = require('../models/Post');
 const PrayerRequest = require('../models/PrayerRequest');
 
 
+router.get('/login', (req, res) => {
+  res.json('login or register')
+});
 
 // Register
 router.post('/register', (req, res) => {
