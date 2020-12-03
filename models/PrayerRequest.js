@@ -2,10 +2,15 @@ const mongoose = require('mongoose');
 
 const PrayerRequestSchema = new mongoose.Schema({
 
-    PostDes: {
+    prayerRequestDes: {
         type: String,
         required: true
     },
+    duration: {
+        type: String,
+        required: true
+    },
+
 
     date: {
         type: Date,

@@ -27,7 +27,7 @@ router.post('/register', (req, res) => {
   if (password != password2) {
     errors.push({ msg: 'Passwords do not match' });
   }
-
+  console.log(email)
   if (password.length < 6) {
     errors.push({ msg: 'Password must be at least 6 characters' });
   }
@@ -75,7 +75,7 @@ router.post('/register', (req, res) => {
             newUser
               .save()
               .then(user => {
-                req.json({
+                res.json({
                   user: user
                 })
               })
@@ -92,6 +92,7 @@ router.post('/register', (req, res) => {
 router.post("/completeReg:id", async (req, res) => {
   try {
     const _id = req.params.id
+    console.log(_id,)
     const { username, firstname, lastname, phoneNumber, profileColor } = req.body
     const updatedAt = new Date()
     const data = await User.findOneAndUpdate({ _id }, { username, firstname, lastname, phoneNumber, profileColor }, { new: true })
@@ -106,7 +107,7 @@ router.post("/completeReg:id", async (req, res) => {
 
 
 //change password
-router.put("/changePassword/:id", async (req, res) => {
+router.put("/changePassword:id", async (req, res) => {
   try {
     const _id = req.params.id
     let { password, password2, old_password } = req.body
@@ -116,7 +117,7 @@ router.put("/changePassword/:id", async (req, res) => {
       error.push({ msg: 'Passwords do not match' });
     }
 
-    if (error) {
+    if (error.length > 1) {
       return res.status(400).json({
         error: error
       })
@@ -150,10 +151,11 @@ router.put("/changePassword/:id", async (req, res) => {
 
 
 // Set Goals
-router.post('/setGoal:user_id ', (req, res) => {
+router.post("/setGoal:id", (req, res) => {
   const { goal, amount } = req.body;
 
-  const user_id = req.params.user_id
+  const id = req.params.id
+  console.log(id)
   let errors = [];
 
   if (!goal || !amount) {
@@ -165,38 +167,37 @@ router.post('/setGoal:user_id ', (req, res) => {
       errors: errors
     });
   } else {
-    User.findOne({ _id: user_id }).then(user => {
+    User.findOne({ _id: id }).then(user => {
 
       newGoal = new SetGoal({
         goal,
         amount,
-        user_id
+        id
 
       })
 
       User.updateOne({ _id: user._id }, { $push: { goals: newGoal } },
         function (err, goal) {
           if (err) {
-            res.json({
-              error: err
-            })
+            console.log(err)
+
           }
           console.log(goal)
 
         })
-      SetGoal
+      newGoal
         .save()
         .then(user => {
           res.json(user)
         })
-        .catch(err => console.log(err));
+        .catch(err => res.json(err));
     })
   }
 });
 
 
 // create group
-router.post('/createGroup:user_id', (req, res) => {
+router.post("/createGroup:user_id", (req, res) => {
   const user_id = req.params.user_id
 
   const { name, des, img, display } = req.body;
@@ -245,7 +246,7 @@ router.post('/createGroup:user_id', (req, res) => {
         newGroup
           .save()
           .then(group => {
-            req.json({
+            res.json({
               group: group
             })
           })
@@ -290,10 +291,10 @@ router.post('/createPost:user_id', (req, res) => {
         })
     })
 
-    Post
+    newPost
       .save()
       .then(post => {
-        req.json({
+        res.json({
           post
         })
       })
@@ -310,10 +311,10 @@ router.post('/createPost:user_id', (req, res) => {
 router.post('/createPrayerRequest:user_id', (req, res) => {
   const user_id = req.params.user_id
 
-  const { prayerRequestDes, date } = req.body;
+  const { prayerRequestDes, duration } = req.body;
   let errors = [];
 
-  if (!date || !prayerRequestDes) {
+  if (!duration || !prayerRequestDes) {
     errors.push({ msg: 'Please enter all fields' });
   }
 
@@ -324,24 +325,23 @@ router.post('/createPrayerRequest:user_id', (req, res) => {
   } else {
     const newPrayerRequestDes = new PrayerRequest({
       prayerRequestDes,
-      date
+      duration
     });
 
     User.findOne({ _id: user_id }).then(user => {
       User.updateOne({ _id: user.id }, { $push: { prayerRequests: newPrayerRequestDes } },
         function (err, prayer) {
           if (err) {
-            res.json({
-              error: err
-            })
+            console.log(err)
+
           }
           console.log(prayer)
         })
     })
-    PrayerRequest
+    newPrayerRequestDes
       .save()
       .then(prayer => {
-        req.json({
+        res.json({
           prayer
         })
       })
@@ -352,10 +352,10 @@ router.post('/createPrayerRequest:user_id', (req, res) => {
 
 
 // join group
-router.post('/joinGroup:user_id:group_id', (req, res) => {
-
+router.post('/joinGroup/:user_id/:group_id', (req, res) => {
   const user_id = req.params.user_id
   const group_id = req.params.group_id
+  console.log(user_id,group_id)
 
   Group.findOne({ _id: group_id }).then(group => {
     User.updateOne({ _id: user_id }, { $push: { groups: group } },
@@ -365,22 +365,21 @@ router.post('/joinGroup:user_id:group_id', (req, res) => {
             error: err
           })
         }
-        console.log(user)
+        console.log('userrrs',user,group)
       })
-  })
+  }) 
 
   User.findOne({ _id: user_id }).then(user => {
     Group.updateOne({ _id: group_id }, { $push: { groupUsers: user } },
       function (err, group) {
-        if (err) {
+        if (err) { 
           res.json({
             error: err
           })
         }
-        console.log(group)
-      })
+        console.log('grrrrroup', group, user) 
+      }) 
   })
-
 });
 
 
@@ -388,7 +387,7 @@ router.post('/joinGroup:user_id:group_id', (req, res) => {
 // Login
 router.post('/login', (req, res, next) => {
   passport.authenticate('local', {
-    successRedirect: '/dashboard',
+    successRedirect: '/home',
     failureRedirect: '/users/login',
     failureFlash: true
   })(req, res, next);
@@ -431,6 +430,15 @@ router.get("/getPrayer", async (req, res) => {
 //Get all Post
 router.get("/getPost", async (req, res) => {
   const data = await Post.find({})
+  res.status(200).json({
+    data
+  })
+
+})
+
+//Get all goals
+router.get("/getGoals", async (req, res) => {
+  const data = await SetGoal.find({})
   res.status(200).json({
     data
   })

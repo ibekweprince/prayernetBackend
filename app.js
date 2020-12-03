@@ -27,6 +27,8 @@ app.use('/assets', express.static('assets'));
 
 // Express body parser
 app.use(express.urlencoded({limit: '1000000000000000000mb', extended: true}));
+app.use(express.json({limit: '1000000000000000000mb', extended: true}));
+
 
 // Express session
 app.use(
