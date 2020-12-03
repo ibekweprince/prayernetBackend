@@ -30,6 +30,9 @@ const UserSchema = new mongoose.Schema({
   group: {
     type: [Object],
   },
+  createdGroups: {
+    type: [Object],
+  },
   date: {
     type: Date,
     default: Date.now

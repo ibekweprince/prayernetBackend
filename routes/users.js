@@ -6,8 +6,8 @@ const passport = require('passport');
 const User = require('../models/User');
 const SetGoal = require('../models/SetGoal');
 const Group = require('../models/Group');
+const CreateGroup = require('../models/CreateGroup');
 
- 
 
 // Register
 router.post('/register', (req, res) => {
@@ -121,6 +121,69 @@ router.post('/setGoal:user_id ', (req, res) => {
 });
 
 
+// create group
+router.post('/createGroup:user_id', (req, res) => {
+  const user_id = req.query.user_id
+
+  const { name, des, img, display } = req.body;
+  let errors = [];
+
+  if (!name || !des || !img || !display) {
+    errors.push({ msg: 'Please enter all fields' });
+  }
+
+  if (errors.length > 0) {
+    res.json({
+      errors: errors
+    });
+  } else {
+    CreateGroup.findOne({ name: name }).then(group => {
+      if (group) {
+        errors.push({ msg: 'name already exists' });
+        res.json({
+          errors: errors
+        });
+      } else {
+
+        groupUsers = []
+
+        const newGroup = new CreateGroup({
+          name,
+          des,
+          img,
+          display,
+          groupUsers,
+          user_id
+        });
+
+        User.findOne({ _id: user_id }).then(user => {
+          User.updateOne({ _id: user.id }, { $push: { createdGroups: newGroup } },
+            function (err, group) {
+              if (err) {
+                res.json({
+                  error: err
+                })
+              }
+              console.log(group)
+            })
+        })
+
+        newGroup
+          .save()
+          .then(group => {
+            req.json({
+              group: group
+            })
+          })
+          .catch(err => console.log(err));
+      }
+    });
+  }
+
+});
+
+
+
 // join group
 router.post('/joinGroup:user_id:group_id', (req, res) => {
 
@@ -140,7 +203,7 @@ router.post('/joinGroup:user_id:group_id', (req, res) => {
   })
 
   User.findOne({ _id: user_id }).then(user => {
-    Group.updateOne({ _id: group_id }, { $push: { users: user } },
+    Group.updateOne({ _id: group_id }, { $push: { groupUsers: user } },
       function (err, group) {
         if (err) {
           res.json({
