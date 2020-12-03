@@ -5,8 +5,9 @@ const passport = require('passport');
 // Load User model
 const User = require('../models/User');
 const SetGoal = require('../models/SetGoal');
+const Group = require('../models/Group');
 
-
+ 
 
 // Register
 router.post('/register', (req, res) => {
@@ -106,9 +107,7 @@ router.post('/setGoal:user_id ', (req, res) => {
               error: err
             })
           }
-          res.json({
-            goal: goal
-          })
+          console.log(goal)
 
         })
       SetGoal
@@ -120,6 +119,41 @@ router.post('/setGoal:user_id ', (req, res) => {
     })
   }
 });
+
+
+// join group
+router.post('/joinGroup:user_id:group_id', (req, res) => {
+
+  const user_id = req.query.user_id
+  const group_id = req.query.group_id
+
+  Group.findOne({ _id: group_id }).then(group => {
+    User.updateOne({ _id: user_id }, { $push: { groups: group } },
+      function (err, user) {
+        if (err) {
+          res.json({
+            error: err
+          })
+        }
+        console.log(user)
+      })
+  })
+
+  User.findOne({ _id: user_id }).then(user => {
+    Group.updateOne({ _id: group_id }, { $push: { users: user } },
+      function (err, group) {
+        if (err) {
+          res.json({
+            error: err
+          })
+        }
+        console.log(group)
+      })
+  })
+
+});
+
+
 
 // Login
 router.post('/login', (req, res, next) => {
