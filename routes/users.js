@@ -7,6 +7,9 @@ const User = require('../models/User');
 const SetGoal = require('../models/SetGoal');
 const Group = require('../models/Group');
 const CreateGroup = require('../models/CreateGroup');
+const Post = require('../models/Post');
+const PrayerRequest = require('../models/PrayerRequest');
+
 
 
 // Register
@@ -40,9 +43,11 @@ router.post('/register', (req, res) => {
       } else {
 
         let goals = []
-        let group = []
+        let groups = []
+        let posts = []
+        let prayerRequests = []
         let phoneNumber = ''
-        let profileColor =''
+        let profileColor = ''
 
 
         const newUser = new User({
@@ -53,7 +58,9 @@ router.post('/register', (req, res) => {
           lastname,
           username,
           goals,
-          group,
+          groups,
+          posts,
+          prayerRequests,
           phoneNumber,
           profileColor
         });
@@ -74,7 +81,7 @@ router.post('/register', (req, res) => {
         });
       }
     });
-  } 
+  }
 });
 
 //complete reg
@@ -84,7 +91,7 @@ router.post("/completeReg:id", async (req, res) => {
     const _id = req.params.id
     const { username, firstname, lastname, phoneNumber, profileColor } = req.body
     const updatedAt = new Date()
-    const data = await UserModel.findOneAndUpdate({ _id }, { username, firstname, lastname, phoneNumber, profileColor }, { new: true })
+    const data = await User.findOneAndUpdate({ _id }, { username, firstname, lastname, phoneNumber, profileColor }, { new: true })
 
     console.log(req.body)
     res.status(201).json(data)
@@ -112,7 +119,7 @@ router.put("/changePassword/:id", async (req, res) => {
       })
     }
 
-    let data = await UserModel.findOne({ _id })
+    let data = await User.findOne({ _id })
     if (!data) {
       return res.status(400).json({
         error: "User does not exist in database"
@@ -244,6 +251,99 @@ router.post('/createGroup:user_id', (req, res) => {
     });
   }
 
+});
+
+
+
+// create Post
+router.post('/createPost:user_id', (req, res) => {
+  const user_id = req.params.user_id
+
+  const { postDes } = req.body;
+  let errors = [];
+
+  if (!postDes) {
+    errors.push({ msg: 'Please enter all fields' });
+  }
+
+  if (errors.length > 0) {
+    res.json({
+      errors: errors
+    });
+  } else {
+    const newPost = new Post({
+      postDes
+    });
+
+    User.findOne({ _id: user_id }).then(user => {
+      User.updateOne({ _id: user.id }, { $push: { posts: postDes } },
+        function (err, post) {
+          if (err) {
+            res.json({
+              error: err
+            })
+          }
+          console.log(post)
+        })
+    })
+
+    Post
+      .save()
+      .then(post => {
+        req.json({
+          post
+        })
+      })
+      .catch(err => console.log(err));
+
+  }
+
+});
+
+
+
+
+// create PrayerRequest
+router.post('/createPrayerRequest:user_id', (req, res) => {
+  const user_id = req.params.user_id
+
+  const { prayerRequestDes, date } = req.body;
+  let errors = [];
+
+  if (!date || !prayerRequestDes) {
+    errors.push({ msg: 'Please enter all fields' });
+  }
+
+  if (errors.length > 0) {
+    res.json({
+      errors: errors
+    });
+  } else {
+    const newPrayerRequestDes = new PrayerRequest({
+      prayerRequestDes,
+      date
+    });
+
+    User.findOne({ _id: user_id }).then(user => {
+      User.updateOne({ _id: user.id }, { $push: { prayerRequests: newPrayerRequestDes } },
+        function (err, prayer) {
+          if (err) {
+            res.json({
+              error: err
+            })
+          }
+          console.log(prayer)
+        })
+    })
+    PrayerRequest
+      .save()
+      .then(prayer => {
+        req.json({
+          prayer
+        })
+      })
+      .catch(err => console.log(err));
+  }
 });
 
 

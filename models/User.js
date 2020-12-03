@@ -33,7 +33,13 @@ const UserSchema = new mongoose.Schema({
   goals: {
     type: [Object],
   },
-  group: {
+  posts: {
+    type: [Object],
+  },
+  prayerRequests: {
+    type: [Object],
+  },
+  groups: {
     type: [Object],
   },
   createdGroups: {
