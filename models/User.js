@@ -27,6 +27,9 @@ const UserSchema = new mongoose.Schema({
   phoneNumber: {
     type: String,
   },
+  profileColor: {
+    type: String,
+  },
   goals: {
     type: [Object],
   },

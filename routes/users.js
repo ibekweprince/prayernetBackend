@@ -42,6 +42,7 @@ router.post('/register', (req, res) => {
         let goals = []
         let group = []
         let phoneNumber = ''
+        let profileColor =''
 
 
         const newUser = new User({
@@ -53,7 +54,8 @@ router.post('/register', (req, res) => {
           username,
           goals,
           group,
-          phoneNumber
+          phoneNumber,
+          profileColor
         });
 
         bcrypt.genSalt(10, (err, salt) => {
@@ -75,9 +77,26 @@ router.post('/register', (req, res) => {
   }
 });
 
+//complete reg
+
+router.post("/completeReg:id", async (req, res) => {
+  try {
+    const _id = req.params.id
+    const { username, firstname, lastname, phoneNumber, profileColor } = req.body
+    const updatedAt = new Date()
+    const data = await UserModel.findOneAndUpdate({ _id }, { username, firstname, lastname, phoneNumber, profileColor }, { new: true })
+
+    console.log(req.body)
+    res.status(201).json(data)
+  } catch (err) {
+    console.log(err)
+  }
+
+})
+
 
 //change password
-router.put("/password/:id", async (req, res) => {
+router.put("/changePassword/:id", async (req, res) => {
   try {
     const _id = req.params.id
     let { password, password2, old_password } = req.body
