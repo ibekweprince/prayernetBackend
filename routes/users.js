@@ -129,7 +129,7 @@ router.put("/changePassword/:id", async (req, res) => {
       const isValid = await bcrypt.compare(old_password, data.password)
       if (isValid) {
         password = await bcrypt.hash(password, 15)
-        const newUser = await UserModel.findOneAndUpdate({ _id }, { password }, { new: true })
+        const newUser = await User.findOneAndUpdate({ _id }, { password }, { new: true })
         return res.status(201).json(newUser)
       } else {
         return res.status(400).json({
@@ -397,6 +397,42 @@ router.get('/logout', (req, res) => {
   req.flash('success_msg', 'You are logged out');
   res.redirect('/users/login');
 });
+
+//Get all Users
+router.get("/getUsers", async (req, res) => {
+  const data = await User.find({})
+  res.status(200).json({
+    data
+  })
+
+})
+
+//Get all Group
+router.get("/getGroup", async (req, res) => {
+  const data = await CreateGroup.find({})
+  res.status(200).json({
+    data
+  })
+
+})
+
+//Get all Prayer
+router.get("/getPrayer", async (req, res) => {
+  const data = await PrayerRequest.find({})
+  res.status(200).json({
+    data
+  })
+
+})
+
+//Get all Post
+router.get("/getPost", async (req, res) => {
+  const data = await Post.find({})
+  res.status(200).json({
+    data
+  })
+
+})
 
 
 
