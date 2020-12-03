@@ -39,8 +39,9 @@ router.post('/register', (req, res) => {
         });
       } else {
 
-        goals = []
-        group = []
+        let goals = []
+        let group = []
+        let phoneNumber = ''
 
 
         const newUser = new User({
@@ -51,7 +52,8 @@ router.post('/register', (req, res) => {
           lastname,
           username,
           goals,
-          group
+          group,
+          phoneNumber
         });
 
         bcrypt.genSalt(10, (err, salt) => {
@@ -188,7 +190,7 @@ router.post('/createGroup:user_id', (req, res) => {
         });
       } else {
 
-        groupUsers = []
+        let groupUsers = []
 
         const newGroup = new CreateGroup({
           name,

@@ -24,6 +24,9 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  phoneNumber: {
+    type: String,
+  },
   goals: {
     type: [Object],
   },
