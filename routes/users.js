@@ -445,6 +445,13 @@ router.get("/getGoals", async (req, res) => {
 
 })
 
-
+// Login
+router.post('/login', (req, res, next) => {
+  passport.authenticate('local', {
+    function(req, res) {
+      res.json({ user: req.user });
+    }
+  })(req, res, next);
+});
 
 module.exports = router;
